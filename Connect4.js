@@ -1,5 +1,5 @@
-var currentPlayer = "Black";
-var nextPlayer = "Red";
+var currentPlayer = "Black"
+//var nextPlayer = "Red";
 var playerBlackSelections = new Array();
 var playerRedSelections = new Array();
 var map = [
@@ -122,7 +122,7 @@ handlClick = function(event) {
 
     if(checkWinner(playerSelections)) {
      alert("Player " + currentPlayer + " wins!")
-      //resetGame();
+      resetGame();
     }
    
   // Swap players
@@ -154,4 +154,3 @@ handlClick = function(event) {
 
    }
 }
-

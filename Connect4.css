@@ -15,3 +15,13 @@ td {
     align-items:center;
     
 }
+.checker {
+    border-radius: 50%;
+}
+.red{
+    background-color: red;
+
+}
+.black{
+    background-color:black;
+}
