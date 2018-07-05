@@ -1,8 +1,15 @@
 var currentPlayer = "Black";
 var nextPlayer = "Red";
-
 var playerBlackSelections = new Array();
 var playerRedSelections = new Array();
+var map = [
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0]
+ ]
 
 
 const winningCombinations = [
@@ -81,7 +88,8 @@ const winningCombinations = [
 [20,21,22,23],
 [26,27,28,29],
 [32,33,34,35],
-[38,39,40,41]
+[38,39,40,41],
+[36,37,38,39]
 ]
 
 
@@ -91,7 +99,15 @@ handlClick = function(event) {
     var cell = event.target
     console.log(cell.id)
 
-    cell.innerHTML = currentPlayer;
+    var column =((cell.id) %7)
+  console.log(map);
+    for (var row = 5;row >=0; row--){
+    if(map[row][column]==0){
+
+        map[row][column] = currentPlayer;
+        
+        cell = document.getElementById(row*7+column)
+        cell.innerHTML = currentPlayer;
 
     if(currentPlayer === "Black" ) {
       playerSelections = playerBlackSelections;
@@ -100,17 +116,20 @@ handlClick = function(event) {
       playerSelections = playerRedSelections;
       nextPlayer = "Black";
     }
-  
+    console.log(cell.id)
     playerSelections.push(parseInt(cell.id));
   
 
     if(checkWinner(playerSelections)) {
      alert("Player " + currentPlayer + " wins!")
-      resetGame();
+      //resetGame();
     }
    
   // Swap players
   currentPlayer = nextPlayer;
+  break;
+}
+    }
   }
        var cells = document.querySelectorAll("td");
 
@@ -125,7 +144,7 @@ handlClick = function(event) {
            if(playerSelections.includes(winningCombinations[i][j])){
                matches++;
            }
-           console.log("matches " + matches)
+           //console.log("matches " + matches)
        
 
        }
@@ -135,3 +154,4 @@ handlClick = function(event) {
 
    }
 }
+

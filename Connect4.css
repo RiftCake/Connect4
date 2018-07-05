@@ -1,11 +1,17 @@
 td {
-    border: 1px solid blue;
+    border: 2px solid blue;
     width: 90px;
     height: 90px; 
+    border-radius: 6000000000%;
+    
+  }
+  table{
+      border: 5px solid Blue;
   }
   body {
     display: flex;
     justify-content:center;
     height: 100vh;
     align-items:center;
+    
 }
