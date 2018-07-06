@@ -17,6 +17,8 @@ td {
 }
 .checker {
     border-radius: 50%;
+    width:inherit;
+    height: inherit;
 }
 .red{
     background-color: red;
